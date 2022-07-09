@@ -18,14 +18,38 @@ function Cuisine() {
 
     // dynamically update cuisine page, using params.type
     useEffect(() => {
-        getCuisine(`params.type`)
-        console.log(params.type)
+        getCuisine(params.type)
     }, [params.type])
   return (
-    <div>
-        
-    </div>
+    <Grid>
+        {cuisine.map((item) => {
+            return (
+                <Card key={item.id}>
+                    <img src={item.image} alt=''/>
+                    <h4>{item.title} </h4>
+                </Card>
+            )
+        })}
+    </Grid>
   )
 }
 
+const Grid = styled.div `
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+grid-graph: 3rem;
+`
+const Card = styled.div `
+img {
+    width: 75%;
+    border-radius: 2rem;
+    
+    a {
+        text-decloration: none;
+    }
+    h4{
+        text-align: center;
+    }
+}
+`
 export default Cuisine
