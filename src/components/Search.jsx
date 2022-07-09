@@ -10,13 +10,14 @@ function Search() {
     };
 
   return (
-    <FormStyle>
+    <FormStyle onSubmit={submitHandler}>
         <div>
         <FaSearch></FaSearch>
-        <input onChange={(e) => setInput(e.target.value)}type='text' value={input}/>
-        <h1> {input}</h1>
+        <input onChange={(e) => setInput(e.target.value)}
+        type='text' 
+        value={input}/>
         </div>
-    </FormStyle>
+    </FormStyle >
   )
 }
 
