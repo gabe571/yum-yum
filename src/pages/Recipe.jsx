@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 function Recipe() {
     let params = useParams();
     const [details, setDetails] = useState({});
+    const [activeTab, setActiveTab] = useState('instructions');
 
     const fetchDetails = async () => {
         const data = await fetch(
@@ -23,8 +24,11 @@ function Recipe() {
         <img src={details.image} alt='' /> 
     </div>
     <Info>
-        <Button> Instructions </Button>
-        <Button> Ingredients </Button>
+        <Button className={activeTab === 'instructions' ? 'active' : ''}
+        onClick={() => setActiveTab('instructions')}> Instructions </Button>
+        
+        <Button className={activeTab === 'ingredients' ? 'active' : ''}
+        onClick={() => setActiveTab('ingredients')}> Ingredients </Button>
     </Info>
   </DetailWrapper>
 }
@@ -58,6 +62,6 @@ font-weight: 600;
 `
 
 const Info = styled.div `
-margin-left: 5rem; 
+margin-left: 10rem; 
 `
 export default Recipe
