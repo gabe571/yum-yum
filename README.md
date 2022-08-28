@@ -1,13 +1,10 @@
-Fork & Knife
+# Fork/Knife
 
-
-
-
-Get Started
+# Get Started
 Simply clone down the repo
 
 run: npm install
 
 Start browsing reciepes
 
-Features
+# Features
